@@ -34,9 +34,6 @@
     // Kullanım, yalnızca xat.com ile sınırlıdır ve sahibin açık onayını gerektirir.
     // İzinsiz kullanım yasaktır ve yasal işlemlere tabidir. -->
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,28 +52,38 @@
       overflow: hidden;
       color: white;
       font-family: 'Arial', sans-serif;
+      flex-direction: column;
     }
+
     h1, h2 {
       text-align: center;
-      position: absolute;
-      z-index: 10;
-      top: 5%;
-      width: 100%;
+      position: relative;
+      margin: 0;
+      padding: 10px;
       pointer-events: none;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 20px;
     }
 
     .shapes {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      pointer-events: none;
+      height: 70vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .shape {
-      position: absolute;
+      position: relative;
       width: 200px;
       height: 200px;
       background: transparent;
@@ -112,12 +119,12 @@
     }
 
     /* Shape positions */
-    .shape:nth-child(1) { left: 10%; top: 20%; }
-    .shape:nth-child(2) { left: 50%; top: 40%; }
-    .shape:nth-child(3) { left: 80%; top: 60%; }
-    .shape:nth-child(4) { left: 30%; top: 80%; }
-    .shape:nth-child(5) { left: 70%; top: 30%; }
-    .shape:nth-child(6) { left: 40%; top: 50%; }
+    .shape:nth-child(1) { animation-delay: 0s; }
+    .shape:nth-child(2) { animation-delay: 2s; }
+    .shape:nth-child(3) { animation-delay: 4s; }
+    .shape:nth-child(4) { animation-delay: 6s; }
+    .shape:nth-child(5) { animation-delay: 8s; }
+    .shape:nth-child(6) { animation-delay: 10s; }
 
     @keyframes glow {
       0% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.4), 0 0 40px rgba(255, 0, 255, 0.7); }
@@ -127,7 +134,7 @@
 
     @keyframes move {
       0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
-      50% { transform: translateY(150px) translateX(150px) rotate(180deg); }
+      50% { transform: translateY(100px) translateX(100px) rotate(180deg); }
     }
 
     .animated-text {
@@ -152,15 +159,15 @@
   </style>
 </head>
 <body>
-  <h1 class="animated-text">Neon Geometry Shapes</h1>
+  <h1 class="animated-text">Welcome to My Neon Geometrical World!</h1>
   <div class="shapes">
-    <div class="shape circle">Circle Text</div>
-    <div class="shape square">Square Text</div>
-    <div class="shape rectangle">Rectangle Text</div>
-    <div class="shape hexagon">Hexagon Text</div>
-    <div class="shape circle">Another Circle</div>
-    <div class="shape rectangle">Another Rectangle</div>
+    <div class="shape circle">Zodiac Sign</div>
+    <div class="shape square">Age</div>
+    <div class="shape rectangle">My Chat</div>
+    <div class="shape hexagon">Daily Horoscope</div>
+    <div class="shape circle">Favorite Color</div>
+    <div class="shape rectangle">Lucky Number</div>
   </div>
-  <h2 class="animated-text">Hover to see the glow effects!</h2>
+  <h2 class="animated-text">Explore these interactive shapes!</h2>
 </body>
 </html>
