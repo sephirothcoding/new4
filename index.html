@@ -33,6 +33,10 @@
     // Seph'ten (1538769249) doğrudan satın alınmadıkça hiçbir şekilde kullanılamaz, kopyalanamaz veya dağıtılamaz.
     // Kullanım, yalnızca xat.com ile sınırlıdır ve sahibin açık onayını gerektirir.
     // İzinsiz kullanım yasaktır ve yasal işlemlere tabidir. -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,15 +77,41 @@
 
     .shape {
       position: absolute;
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       background: transparent;
-      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: white;
+      text-align: center;
       border: 3px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.8), 0 0 100px rgba(255, 255, 255, 1);
       animation: glow 5s ease-in-out infinite, move 10s ease-in-out infinite;
     }
 
+    .shape.circle {
+      border-radius: 50%;
+    }
+
+    .shape.square {
+      width: 250px;
+      height: 250px;
+    }
+
+    .shape.rectangle {
+      width: 300px;
+      height: 150px;
+    }
+
+    .shape.hexagon {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      width: 250px;
+      height: 200px;
+    }
+
+    /* Shape positions */
     .shape:nth-child(1) { left: 10%; top: 20%; }
     .shape:nth-child(2) { left: 50%; top: 40%; }
     .shape:nth-child(3) { left: 80%; top: 60%; }
@@ -97,7 +127,7 @@
 
     @keyframes move {
       0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
-      50% { transform: translateY(200px) translateX(200px) rotate(180deg); }
+      50% { transform: translateY(150px) translateX(150px) rotate(180deg); }
     }
 
     .animated-text {
@@ -116,21 +146,21 @@
 
     /* Responsive design */
     @media (max-width: 768px) {
-      .shape { width: 100px; height: 100px; }
+      .shape { width: 150px; height: 150px; }
       .animated-text { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <h1 class="animated-text">Welcome to My Neon Glow Geometry!</h1>
+  <h1 class="animated-text">Neon Geometry Shapes</h1>
   <div class="shapes">
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
+    <div class="shape circle">Circle Text</div>
+    <div class="shape square">Square Text</div>
+    <div class="shape rectangle">Rectangle Text</div>
+    <div class="shape hexagon">Hexagon Text</div>
+    <div class="shape circle">Another Circle</div>
+    <div class="shape rectangle">Another Rectangle</div>
   </div>
-  <h2 class="animated-text">Experience the interactive glow effects</h2>
+  <h2 class="animated-text">Hover to see the glow effects!</h2>
 </body>
 </html>
